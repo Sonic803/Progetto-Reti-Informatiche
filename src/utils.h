@@ -1,0 +1,12 @@
+int convert_to_int(char *str);
+void set_verbosity(int argc, char *argv[]);
+void log_debug(const char *fmt, ...);
+void log_info(const char *fmt, ...);
+void log_error(const char *fmt, ...);
+void help_server();
+void help_client();
+int get_porta_server(int argc, char *argv[]);
+int get_porta_client(int argc, char *argv[]);
+void printf_red(char *str, ...);
+void printf_yellow(char *str, ...);
+void printf_green(char *str, ...);

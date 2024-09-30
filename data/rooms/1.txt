@@ -1,0 +1,183 @@
+ROOM
+
+Room 1
+
+Room_Name:
+tempio
+
+Room_Description:
+Sei in una stanza buia, con la poca luce che si infiltra dalle fessure delle pareti riesci a vedere che sei in una stanza di un tempio.
+Al centro della stanza cè un ++altare++ con sopra una **scacchiera** in marmo.
+Nell' angolo nord-ovest c'è la **statua** di un dio che emette uno strano bagliore, nell' angolo sud-est c'è un grande **prisma** di cristallo.
+Nell' angolo nord-est c'è un **candelabro**.
+
+End_Description:
+Tutto intorno a te inizia a tremare, le pareti si stanno chiudendo, devi uscire da qui prima che sia troppo tardi.
+Una roccia cadendo colpisce la statua del dio che si rompe in mille pezzi, si crea un buco nel muro che ti permette di uscire.
+
+Time 180
+
+LOCATIONS
+
+Location 0
+
+Location_Name:
+altare
+
+Location_Description:
+È un altare bianco, sopra c'è una **scacchiera** in marmo che sembra essere incastonata nell'altare, la **scacchiera** è rialzata di qualche centimetro rispetto all'altare.
+Di lato all'altare c'è un **bastone** non sembra essere questo il suo posto.
+
+
+OBJECTS
+
+Object 0
+
+Object_Name:
+scacchiera
+
+Locked
+
+- Unlocks scacchiera
+
+Object_Description_Locked:
+La scacchiera è incastonata nell'altare, è composta da quadrati bianchi e neri, 8 per lato.
+Sopra la scacchiera ci sono delle pedine opache, bianche e nere fatte di cristallo.
+
+Object_Description_Unlocked:
+All'interno dello della scacchiera c'è uno scompartimento con un **cristallo**.
+
+Object_Activation_Description:
+Posi la pedina sulla scacchiera, ed essa si apre svelando un vano segreto.
+
+Object_Enigma:
+8  . . . . . k n Q
+7  . . . . q . n .
+6  p . . . p . B .
+5  . p . r . . N .
+4  . . . r . . . .
+3  . . . . . . . P
+2  P P P . . P . .
+1  . . K . . . . R
+   A B C D E F G H
+Sembrerebbe che il bianco stia vincendo, qual'è la posizione della pedina che deve muovere per vincere?
+
+Object_Enigma_Solution:
+G5
+
+Enigma_Tries 3
+
+Object 1
+
+Object_Name:
+cristallo
+
+Hidden
+Takeable
+
+Unhidden_with:
+0
+- scacchiera
+
+Use_with:
+3
+- candelabro
+
+- Unlocks candelabro
+
+Tokens 1
+Time 10
+
+Object_Description_Unlocked:
+È un cristallo rosso riflettente, sembra essere fatto di rubino.
+
+Object_Activation_Description:
+Inserisci il cristallo nel candelabro.
+
+
+Object 2
+
+Object_Name:
+statua
+
+Locked
+
+Unlock_with:
+5
+- bastone
+
+Object_Description_Locked:
+La statua di un dio, la mano destra è aperta come se dovesse tenere qualcosa.
+
+
+Object_Description_Unlocked:
+La statua di un dio con un bastone, il bastone emette come un fascio di luce che punta verso est.
+
+Object_Activation_Description:
+La sfera di cristallo del bastone emette un fascio di luce che punta verso est.
+
+Object 3
+
+Object_Name:
+candelabro
+
+Locked
+
+Unlock_with:
+1
+- cristallo
+
+- Unlocks prisma with statua
+
+
+Object_Description_Locked:
+Un alto candelabro in bronzo, ha 3 braccia, in quelle laterali ci sono due candele accese, in quella centrale non c'è nulla.
+
+Object_Description_Unlocked:
+Un alto candelabro in bronzo, ha 3 braccia, in quelle laterali ci sono due candele accese, in quella centrale c'è un rubino.
+
+Object_Activation_Description:
+Il candelabro ruota su se stesso, fino a fermarsi con le braccia rivolte in diagonale rispetto alle pareti della stanza.
+
+Object 4
+
+Object_Name:
+prisma
+
+Locked
+
+Unlock_with:
+2 3
+
+- candelabro, statua
+
+Tokens 2
+
+Object_Description_Locked:
+È un grande prisma, sembra essere molto riflettente.
+
+Object_Description_Unlocked:
+Il grande prisma viene colpito dalla luce della statua e riflettendola illumina tutta la stanza.
+
+Object_Activation_Description:
+Il prisma viene illuminato dalla luce della statua riflessa dal rubino.
+
+
+Object 5
+
+Object_Name:
+bastone
+
+Takeable
+
+Use_with:
+2
+- statua
+
+- Unlocks statua
+
+Object_Description_Unlocked:
+È un bastone di marmo, da un lato cè una sfera di cristallo.
+
+Object_Activation_Description:
+Collochi il bastone nella mano della statua.
